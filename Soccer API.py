@@ -4,9 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Add your API Key in an env file called API_Key
 url = "https://oauth2.elenasport.io/oauth2/token"
 payload = 'grant_type=client_credentials'
+
+# Add your API Key to a .env file and call it API_Key
 headers = {
     'Authorization': os.getenv('API_Key'),
     'Content-Type': 'application/x-www-form-urlencoded'
