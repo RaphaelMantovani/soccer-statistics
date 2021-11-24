@@ -9,6 +9,8 @@ from sklearn.linear_model import LinearRegression
 
 load_dotenv()
 
+# Save your API Key as a .env file called "API_Key" or assign it to the 'Authorization' key in the headers dictionary.
+
 url = "https://oauth2.elenasport.io/oauth2/token"
 payload = 'grant_type=client_credentials'
 headers = {
