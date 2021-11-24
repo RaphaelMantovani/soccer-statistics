@@ -135,7 +135,8 @@ fixtures_df['home_points'] = [3 if p > 0 else 1 if p == 0 else 0 for p in fixtur
 
 grouped_df = fixtures_df.groupby('homeName').aggregate({'attendance': 'mean',
                                                         'home_points': 'sum'})
-grouped_df.dropna()
+grouped_df = grouped_df.dropna()
+
 LR = LinearRegression()
 LR.fit(grouped_df['attendance'].array.reshape(-1, 1), grouped_df['home_points'])
 prediction = LR.predict(grouped_df['attendance'].array.reshape(-1,1))
